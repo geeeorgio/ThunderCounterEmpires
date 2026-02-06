@@ -4,7 +4,7 @@ export const COLORS = {
 
   purple_main: '#4b115f',
   purple_light: '#a468bb',
-  purple_btn: '#4c43b4',
+  purple_btn: '#8049DE',
   purple_opacity_10: 'rgba(101, 101, 101, 0.1)',
 
   blue_main: '#4c43b4',
