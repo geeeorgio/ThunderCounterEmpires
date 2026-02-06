@@ -1,6 +1,11 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { HomeScreen, SettingsScreen, StoriesScreen } from 'src/screens';
+import {
+  CounterScreen,
+  HomeScreen,
+  SettingsScreen,
+  StoriesScreen,
+} from 'src/screens';
 import type { MainStackParamList } from 'src/types';
 
 const MainStack = createNativeStackNavigator<MainStackParamList>();
@@ -18,6 +23,7 @@ const MainNavigator = () => {
       }}
     >
       <MainStack.Screen name="HomeScreen" component={HomeScreen} />
+      <MainStack.Screen name="CounterScreen" component={CounterScreen} />
       <MainStack.Screen name="StoriesScreen" component={StoriesScreen} />
       <MainStack.Screen name="SettingsScreen" component={SettingsScreen} />
     </MainStack.Navigator>

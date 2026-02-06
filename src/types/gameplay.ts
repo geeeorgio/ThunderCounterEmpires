@@ -28,4 +28,6 @@ export type GameContextType = {
   contextTasks: TaskType[];
   addContextTask: (task: TaskType) => void;
   deleteContextTask: (taskId: string) => void;
+  //
+  isLoading: boolean;
 };

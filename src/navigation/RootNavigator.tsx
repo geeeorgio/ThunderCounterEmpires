@@ -9,7 +9,11 @@ import type { RootStackParamList } from 'src/types';
 const RootStack = createNativeStackNavigator<RootStackParamList>();
 
 const RootNavigator = () => {
-  const { isContextOnboardingCompleted } = useGameContext();
+  const { isContextOnboardingCompleted, isLoading } = useGameContext();
+
+  if (isLoading) {
+    return null;
+  }
 
   return (
     <RootStack.Navigator

@@ -6,7 +6,6 @@ import { hp, sp, wp } from 'src/utils';
 export const styles = StyleSheet.create({
   container: {
     width: '100%',
-    paddingHorizontal: 0,
     gap: hp(60),
     alignItems: 'center',
     justifyContent: 'space-between',

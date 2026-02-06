@@ -2,6 +2,7 @@ import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 export type MainStackParamList = {
   HomeScreen: undefined;
+  CounterScreen: undefined;
   SettingsScreen: undefined;
   StoriesScreen: undefined;
 };

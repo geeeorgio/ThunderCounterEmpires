@@ -1,3 +1,4 @@
+import CounterScreen from './CounterScreen/CounterScreen';
 import HomeScreen from './HomeScreen/HomeScreen';
 import OnbdScreen_1 from './Onboarding/OnbdScreen_1';
 import OnbdScreen_2 from './Onboarding/OnbdScreen_2';
@@ -14,4 +15,5 @@ export {
   SettingsScreen,
   StoriesScreen,
   HomeScreen,
+  CounterScreen,
 };
