@@ -1,4 +1,5 @@
 import GameBackground from './layout/GameBackground';
+import ActionButtons from './ui/ActionButtons/ActionButtons';
 import CustomButton from './ui/CustomButton/CustomButton';
 import CustomContainer from './ui/CustomContainer/CustomContainer';
 import CustomHeader from './ui/CustomHeader/CustomHeader';
@@ -11,6 +12,8 @@ import CustomScreenWrapper from './ui/CustomScreenWrapper/CustomScreenWrapper';
 import CustomText from './ui/CustomText/CustomText';
 import StoriesList from './ui/StoriesList/StoriesList';
 import StoryDetails from './ui/StoryDetails/StoryDetails';
+import TaskInput from './ui/TaskInput/TaskInput';
+import TasksList from './ui/TasksList/TasksList';
 
 export {
   GameBackground,
@@ -26,4 +29,7 @@ export {
   CustomText,
   StoriesList,
   StoryDetails,
+  ActionButtons,
+  TasksList,
+  TaskInput,
 };

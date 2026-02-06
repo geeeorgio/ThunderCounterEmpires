@@ -9,6 +9,7 @@ export type Story = {
 export type TaskType = {
   id: string;
   title: string;
+  number: number;
   description: string;
   isCompleted: boolean;
   isSkipped: boolean;

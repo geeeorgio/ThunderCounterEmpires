@@ -1,0 +1,65 @@
+import React from 'react';
+import { View } from 'react-native';
+
+import CustomButton from '../CustomButton/CustomButton';
+import CustomText from '../CustomText/CustomText';
+
+import { styles } from './styles';
+
+import type { TaskType } from 'src/types';
+
+interface TaskItemProps {
+  task: TaskType;
+}
+
+const TaskItem = ({ task }: TaskItemProps) => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.taskInfoContainer}>
+        <CustomText extraStyle={styles.taskTitle}>{task.title}</CustomText>
+      </View>
+      <View style={styles.taskStatusContainer}>
+        <View style={styles.taskNumber}>
+          <CustomText extraStyle={styles.taskNumberText}>
+            {task.number}
+          </CustomText>
+        </View>
+        <CustomButton
+          variant="green"
+          onPress={() => {}}
+          extraStyle={styles.taskStatusBtn}
+        >
+          <CustomText extraStyle={styles.taskStatusBtnText}>+</CustomText>
+        </CustomButton>
+        <CustomButton
+          variant="grey"
+          onPress={() => {}}
+          extraStyle={styles.taskStatusBtn}
+        >
+          <CustomText extraStyle={styles.taskStatusBtnText}>-</CustomText>
+        </CustomButton>
+      </View>
+
+      <View style={styles.taskFooter}>
+        <View style={styles.taskDate}>
+          <CustomText extraStyle={styles.taskDateText}>
+            {task.createdAt.toLocaleDateString()}
+          </CustomText>
+        </View>
+        <View style={styles.taskTime}>
+          <CustomText extraStyle={styles.taskTimeText}>
+            {task.createdAt.toLocaleTimeString('en-US', {
+              hour: '2-digit',
+              minute: '2-digit',
+            })}
+          </CustomText>
+        </View>
+        <CustomButton onPress={() => {}} extraStyle={styles.saveBtn}>
+          <CustomText extraStyle={styles.taskFooterBtnText}>Save</CustomText>
+        </CustomButton>
+      </View>
+    </View>
+  );
+};
+
+export default TaskItem;
