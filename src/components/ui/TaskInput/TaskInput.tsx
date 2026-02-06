@@ -6,19 +6,26 @@ import CustomText from '../CustomText/CustomText';
 import { styles } from './styles';
 
 import { COLORS } from 'src/constants';
+import { formatDateForTask, formatTimeForTask } from 'src/utils';
 
 interface TaskInputProps {
   title: string;
+  date: Date;
   editable?: boolean;
-  onChangeText: (text: string) => void;
+  onChangeTitle: (text: string) => void;
+  onDatePress: () => void;
+  onTimePress: () => void;
   onSave: () => void;
   onCancel: () => void;
 }
 
 const TaskInput = ({
   title,
-  editable,
-  onChangeText,
+  date,
+  editable = true,
+  onChangeTitle,
+  onDatePress,
+  onTimePress,
   onSave,
   onCancel,
 }: TaskInputProps) => {
@@ -30,7 +37,7 @@ const TaskInput = ({
           placeholder="Enter title"
           placeholderTextColor={COLORS.white}
           value={title}
-          onChangeText={() => {}}
+          onChangeText={onChangeTitle}
           onBlur={() => {}}
           onSubmitEditing={() => {}}
           submitBehavior={'blurAndSubmit'}
@@ -40,11 +47,21 @@ const TaskInput = ({
         />
       </View>
       <View style={styles.inputDetailsContainer}>
-        <CustomButton onPress={() => {}} extraStyle={styles.dateInputContainer}>
-          <CustomText extraStyle={styles.inputDetailsBtnText}>Date</CustomText>
+        <CustomButton
+          onPress={onDatePress}
+          extraStyle={styles.dateInputContainer}
+        >
+          <CustomText extraStyle={styles.inputDetailsBtnText}>
+            {formatDateForTask(date)}
+          </CustomText>
         </CustomButton>
-        <CustomButton onPress={() => {}} extraStyle={styles.timeInputContainer}>
-          <CustomText extraStyle={styles.inputDetailsBtnText}>Time</CustomText>
+        <CustomButton
+          onPress={onTimePress}
+          extraStyle={styles.timeInputContainer}
+        >
+          <CustomText extraStyle={styles.inputDetailsBtnText}>
+            {formatTimeForTask(date)}
+          </CustomText>
         </CustomButton>
 
         <CustomButton onPress={onSave} extraStyle={styles.inputDetailsBtn}>

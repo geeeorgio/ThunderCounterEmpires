@@ -28,7 +28,11 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
         }
 
         if (savedTasks !== null) {
-          setContextTasks(savedTasks);
+          const parsedTasks = savedTasks.map((task) => ({
+            ...task,
+            createdAt: new Date(task.createdAt),
+          }));
+          setContextTasks(parsedTasks);
         }
       } catch (e) {
         console.error('Error initializing game context:', e);

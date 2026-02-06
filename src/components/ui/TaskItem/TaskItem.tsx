@@ -2,11 +2,13 @@ import React from 'react';
 import { View } from 'react-native';
 
 import CustomButton from '../CustomButton/CustomButton';
+import SaveIcon from '../CustomIcons/SaveIcon';
 import CustomText from '../CustomText/CustomText';
 
 import { styles } from './styles';
 
 import type { TaskType } from 'src/types';
+import { formatDateForTask, formatTimeForTask, hp, wp } from 'src/utils';
 
 interface TaskItemProps {
   task: TaskType;
@@ -42,20 +44,17 @@ const TaskItem = ({ task }: TaskItemProps) => {
 
       <View style={styles.taskFooter}>
         <View style={styles.taskDate}>
-          <CustomText extraStyle={styles.taskDateText}>
-            {task.createdAt.toLocaleDateString()}
+          <CustomText extraStyle={styles.taskText}>
+            {formatDateForTask(task.createdAt)}
           </CustomText>
         </View>
         <View style={styles.taskTime}>
-          <CustomText extraStyle={styles.taskTimeText}>
-            {task.createdAt.toLocaleTimeString('en-US', {
-              hour: '2-digit',
-              minute: '2-digit',
-            })}
+          <CustomText extraStyle={styles.taskText}>
+            {formatTimeForTask(task.createdAt)}
           </CustomText>
         </View>
         <CustomButton onPress={() => {}} extraStyle={styles.saveBtn}>
-          <CustomText extraStyle={styles.taskFooterBtnText}>Save</CustomText>
+          <SaveIcon width={wp(18)} height={hp(18)} />
         </CustomButton>
       </View>
     </View>
