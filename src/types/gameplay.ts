@@ -19,6 +19,10 @@ export type TaskType = {
   isFavorite: boolean;
 };
 
+export type SortType = 'date' | 'title' | 'countedMore' | 'countedLess';
+
+export type SortOrder = 'asc' | 'desc';
+
 export type GameContextType = {
   contextBackground: ImageSourcePropType;
   //

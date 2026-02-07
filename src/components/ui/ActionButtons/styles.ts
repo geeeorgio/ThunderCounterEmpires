@@ -4,6 +4,10 @@ import { FONTS } from 'src/constants';
 import { sp, wp } from 'src/utils';
 
 export const styles = StyleSheet.create({
+  overlay: {
+    width: '100%',
+    position: 'relative',
+  },
   counterHeaderContainer: {
     width: '100%',
     flexDirection: 'row',

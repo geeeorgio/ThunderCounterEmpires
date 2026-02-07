@@ -32,7 +32,10 @@ const CounterScreen = () => {
           extraStyle={styles.contentContainer}
         >
           <ActionButtons
-            onSortPress={() => {}}
+            onSortPress={logic.handleOnSortPress}
+            handleSortSelect={logic.handleSortSelect}
+            isSorting={logic.isSorting}
+            sortType={logic.sortType}
             onEditPress={logic.handleOnEditPress}
             isEditing={logic.isEditing}
             onSavedPress={logic.handleOnSavedPress}

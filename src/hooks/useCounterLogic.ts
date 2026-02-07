@@ -1,10 +1,10 @@
 import type { DateTimePickerEvent } from '@react-native-community/datetimepicker';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Platform } from 'react-native';
 
 import { useGameContext } from './useGameContext';
 
-import type { TaskType } from 'src/types';
+import type { SortType, TaskType } from 'src/types';
 
 export const useCounterLogic = () => {
   const {
@@ -24,6 +24,8 @@ export const useCounterLogic = () => {
 
   const [isSavedTasksVisible, setIsSavedTasksVisible] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
+  const [isSorting, setIsSorting] = useState(false);
+  const [sortType, setSortType] = useState<SortType>('date');
 
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [taskToDelete, setTaskToDelete] = useState<string | null>(null);
@@ -95,6 +97,37 @@ export const useCounterLogic = () => {
     setIsEditing((prev) => !prev);
   };
 
+  const handleOnSortPress = () => {
+    setIsSorting((prev) => !prev);
+  };
+
+  const handleSortSelect = (type: SortType) => {
+    setSortType(type);
+    setIsSorting(false);
+  };
+
+  const displayedTasks = useMemo(() => {
+    let tasks = isSavedTasksVisible
+      ? contextTasks.filter((task) => task.isFavorite)
+      : contextTasks;
+
+    return [...tasks].sort((a, b) => {
+      switch (sortType) {
+        case 'title':
+          return a.title.localeCompare(b.title);
+        case 'countedMore':
+          return b.number - a.number;
+        case 'countedLess':
+          return a.number - b.number;
+        case 'date':
+        default:
+          return (
+            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+          );
+      }
+    });
+  }, [contextTasks, isSavedTasksVisible, sortType]);
+
   const incrementCount = (taskId: string, currentNumber: number) => {
     updateTask(taskId, { number: currentNumber + 1 });
   };
@@ -104,10 +137,6 @@ export const useCounterLogic = () => {
       updateTask(taskId, { number: currentNumber - 1 });
     }
   };
-
-  const displayedTasks = isSavedTasksVisible
-    ? contextTasks.filter((task) => task.isFavorite)
-    : contextTasks;
 
   const isListEmpty = contextTasks.length === 0;
   const isSavedListEmpty = isSavedTasksVisible && displayedTasks.length === 0;
@@ -124,7 +153,9 @@ export const useCounterLogic = () => {
     pickerMode,
     isSavedTasksVisible,
     isEditing,
+    isSorting,
     showDeleteModal,
+    sortType,
     //
     setNewTitle,
     setShowDeleteModal,
@@ -140,6 +171,8 @@ export const useCounterLogic = () => {
     handleOnSavedPress,
     handleOnEditPress,
     toggleFavoriteTask,
+    handleOnSortPress,
+    handleSortSelect,
     //
     incrementCount,
     decrementCount,
