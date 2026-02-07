@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
   },
   contentContainer: {
     paddingHorizontal: wp(16),
-    paddingBottom: hp(80),
+    paddingBottom: hp(66),
     gap: hp(20),
   },
   storyInfoContainer: {
@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
     borderWidth: wp(2),
     borderColor: COLORS.white,
     borderRadius: wp(15),
-    padding: wp(10),
+    padding: wp(8),
   },
   storyTitle: {
     fontSize: sp(14),
@@ -34,11 +34,11 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     gap: wp(10),
-    paddingHorizontal: wp(16),
-    paddingVertical: hp(12),
+    paddingHorizontal: wp(10),
+    paddingVertical: hp(10),
   },
   shareButtonText: {
-    fontSize: sp(20),
+    fontSize: sp(18),
     fontFamily: FONTS.IntBlack,
   },
 });

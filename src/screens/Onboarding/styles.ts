@@ -6,11 +6,12 @@ import { hp, sp, wp } from 'src/utils';
 export const styles = StyleSheet.create({
   container: {
     width: '100%',
-    gap: hp(60),
+    gap: hp(40),
     alignItems: 'center',
     justifyContent: 'space-between',
   },
   logoContainer: {
+    paddingTop: hp(20),
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
@@ -24,15 +25,15 @@ export const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingTop: hp(16),
+    paddingTop: hp(10),
     position: 'relative',
   },
   textContainer: {
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: hp(20),
-    paddingHorizontal: wp(60),
+    gap: hp(16),
+    paddingHorizontal: wp(50),
     paddingTop: hp(16),
   },
   contentTitle: {
@@ -51,14 +52,14 @@ export const styles = StyleSheet.create({
   },
   button: {
     position: 'absolute',
-    bottom: hp(44),
+    bottom: hp(60),
     width: '60%',
-    paddingHorizontal: wp(12),
-    paddingVertical: hp(14),
+    paddingHorizontal: wp(10),
+    paddingVertical: hp(10),
     zIndex: 10,
   },
   buttonText: {
-    fontSize: sp(18),
+    fontSize: sp(16),
     fontFamily: FONTS.IntBlack,
   },
 });

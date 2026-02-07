@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
   },
   footerButtons: {
     position: 'absolute',
-    bottom: hp(44),
+    bottom: hp(60),
     left: wp(20),
     right: wp(20),
     alignSelf: 'center',
@@ -62,8 +62,8 @@ export const styles = StyleSheet.create({
     borderRadius: wp(15),
   },
   noSavedTasksText: {
-    fontSize: sp(15),
-    lineHeight: hp(20),
+    fontSize: sp(14),
+    lineHeight: hp(18),
     fontFamily: FONTS.MontRegular,
     textAlign: 'center',
   },

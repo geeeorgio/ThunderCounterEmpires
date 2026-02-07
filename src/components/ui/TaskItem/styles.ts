@@ -11,11 +11,11 @@ export const styles = StyleSheet.create({
   },
   container: {
     width: '100%',
-    padding: wp(8),
+    padding: wp(6),
     borderRadius: wp(15),
     borderWidth: wp(2),
     borderColor: COLORS.white,
-    gap: hp(12),
+    gap: hp(10),
   },
   editingContainer: {
     transform: [{ translateX: wp(-90) }],
@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
     borderRadius: wp(10),
   },
   taskTitle: {
-    fontSize: sp(14),
+    fontSize: sp(12),
   },
   taskStatusContainer: {
     flexDirection: 'row',
@@ -53,8 +53,9 @@ export const styles = StyleSheet.create({
     borderRadius: wp(15),
   },
   taskStatusBtnText: {
-    fontSize: sp(22),
+    fontSize: sp(20),
     fontFamily: FONTS.IntBlack,
+    textAlign: 'center',
   },
   taskFooter: {
     width: '100%',
@@ -72,7 +73,7 @@ export const styles = StyleSheet.create({
     borderRadius: wp(10),
   },
   taskText: {
-    fontSize: sp(12),
+    fontSize: sp(10),
   },
   taskTime: {
     flex: 0.35,

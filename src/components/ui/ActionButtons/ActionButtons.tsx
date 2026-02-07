@@ -43,8 +43,8 @@ const ActionButtons = ({
           extraStyle={styles.counterHeaderButton}
         >
           <SortIcon
-            width={wp(18)}
-            height={hp(18)}
+            width={wp(16)}
+            height={hp(16)}
             color={isSorting ? COLORS.purple_main : COLORS.white}
           />
           <CustomText
@@ -62,8 +62,8 @@ const ActionButtons = ({
           extraStyle={styles.counterHeaderButton}
         >
           <PenIcon
-            width={wp(18)}
-            height={hp(18)}
+            width={wp(16)}
+            height={hp(16)}
             color={isEditing ? COLORS.purple_main : COLORS.white}
           />
           <CustomText
@@ -82,7 +82,7 @@ const ActionButtons = ({
         >
           <SaveIcon
             width={wp(12)}
-            height={hp(18)}
+            height={hp(16)}
             color={isSavedActive ? COLORS.purple_main : COLORS.white}
           />
           <CustomText

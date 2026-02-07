@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     borderRadius: wp(15),
     borderWidth: wp(2),
     borderColor: COLORS.white,
-    gap: hp(10),
+    gap: hp(6),
   },
   inputTitleContainer: {
     width: '100%',
@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
   },
   inputTitle: {
     width: '100%',
-    fontSize: sp(14),
+    fontSize: sp(12),
     paddingLeft: wp(12),
     paddingVertical: hp(8),
     color: COLORS.white,
@@ -35,7 +35,7 @@ export const styles = StyleSheet.create({
     gap: wp(4),
   },
   dateInputContainer: {
-    flex: 0.4,
+    flex: 0.44,
     backgroundColor: COLORS.input_color,
     justifyContent: 'center',
     alignItems: 'center',
@@ -43,7 +43,7 @@ export const styles = StyleSheet.create({
     paddingVertical: hp(10),
   },
   timeInputContainer: {
-    flex: 0.25,
+    flex: 0.26,
     backgroundColor: COLORS.input_color,
     justifyContent: 'center',
     alignItems: 'center',
@@ -55,7 +55,7 @@ export const styles = StyleSheet.create({
     paddingVertical: hp(10),
   },
   inputDetailsBtnText: {
-    fontSize: sp(12),
+    fontSize: sp(10),
     fontFamily: FONTS.IntMedium,
   },
   saveText: {

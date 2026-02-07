@@ -23,7 +23,7 @@ export const styles = StyleSheet.create({
     padding: wp(10),
   },
   counterHeaderButtonText: {
-    fontSize: sp(14),
+    fontSize: sp(12),
     fontFamily: FONTS.IntMedium,
   },
 });

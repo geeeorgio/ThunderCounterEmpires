@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     width: '100%',
     paddingTop: hp(20),
     paddingHorizontal: wp(20),
-    paddingBottom: hp(60),
+    paddingBottom: hp(66),
     justifyContent: 'space-between',
   },
   settingsContainer: {
@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
     backgroundColor: COLORS.grey_opacity_80,
   },
   settingsItemText: {
-    fontSize: sp(18),
+    fontSize: sp(16),
     fontFamily: FONTS.MontRegular,
   },
   switch: {
@@ -43,11 +43,11 @@ export const styles = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     gap: wp(10),
-    paddingHorizontal: wp(16),
-    paddingVertical: hp(12),
+    paddingHorizontal: wp(10),
+    paddingVertical: hp(10),
   },
   buttonText: {
-    fontSize: sp(20),
+    fontSize: sp(18),
     fontFamily: FONTS.IntBlack,
   },
 });

@@ -6,8 +6,8 @@ import { hp, sp, wp } from 'src/utils';
 export const styles = StyleSheet.create({
   container: {
     width: '100%',
-    height: hp(100),
-    padding: wp(12),
+    height: hp(96),
+    padding: wp(8),
     borderRadius: wp(15),
     borderWidth: wp(2),
     borderColor: COLORS.white,
@@ -16,12 +16,12 @@ export const styles = StyleSheet.create({
     alignItems: 'flex-start',
   },
   title: {
-    fontSize: sp(14),
-    lineHeight: hp(22),
+    fontSize: sp(12),
+    lineHeight: hp(18),
   },
   description: {
-    fontSize: sp(14),
+    fontSize: sp(12),
     fontFamily: FONTS.MontRegular,
-    lineHeight: hp(22),
+    lineHeight: hp(18),
   },
 });

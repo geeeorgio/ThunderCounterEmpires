@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: wp(60),
+    paddingHorizontal: wp(50),
     backgroundColor: COLORS.modal_overlay,
   },
   container: {
@@ -24,6 +24,7 @@ export const styles = StyleSheet.create({
   contentContainer: {
     width: '100%',
     padding: wp(16),
+    gap: hp(10),
   },
   title: {
     fontSize: sp(16),
@@ -31,7 +32,7 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
   },
   description: {
-    fontSize: sp(14),
+    fontSize: sp(12),
     color: COLORS.black,
     fontFamily: FONTS.IntMedium,
     textAlign: 'center',
@@ -54,12 +55,12 @@ export const styles = StyleSheet.create({
     paddingVertical: hp(12),
   },
   cancelButtonText: {
-    fontSize: sp(15),
+    fontSize: sp(14),
     color: COLORS.blue_text,
     fontFamily: FONTS.IntMedium,
   },
   deleteButtonText: {
-    fontSize: sp(15),
+    fontSize: sp(14),
     color: COLORS.red_1,
   },
 });

@@ -21,10 +21,10 @@ export const styles = StyleSheet.create({
     alignItems: 'flex-start',
   },
   activeButton: {
-    backgroundColor: COLORS.grey_opacity_80,
+    backgroundColor: COLORS.grey_border_55,
   },
   text: {
-    fontSize: sp(16),
+    fontSize: sp(14),
     fontFamily: FONTS.IntMedium,
     color: COLORS.black,
   },

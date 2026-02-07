@@ -86,7 +86,7 @@ const TaskItem = ({
         onPress={() => onDeletePress(task.id)}
         extraStyle={[styles.deleteBtn, isEditing && styles.editingDeleteBtn]}
       >
-        <BinIcon width={wp(28)} height={hp(28)} color={COLORS.white} />
+        <BinIcon width={wp(26)} height={hp(26)} color={COLORS.white} />
       </CustomButton>
     </View>
   );
