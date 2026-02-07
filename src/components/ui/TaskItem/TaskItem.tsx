@@ -9,7 +9,6 @@ import CustomText from '../CustomText/CustomText';
 import { styles } from './styles';
 
 import { COLORS } from 'src/constants';
-import { useGameContext } from 'src/hooks/useGameContext';
 import type { TaskType } from 'src/types';
 import { formatDateForTask, formatTimeForTask, hp, wp } from 'src/utils';
 
@@ -18,6 +17,8 @@ interface TaskItemProps {
   onToggleFavorite: (taskId: string) => void;
   isEditing?: boolean;
   onDeletePress: (taskId: string) => void;
+  onIncrement: (taskId: string, currentNumber: number) => void;
+  onDecrement: (taskId: string, currentNumber: number) => void;
 }
 
 const TaskItem = ({
@@ -25,19 +26,9 @@ const TaskItem = ({
   onToggleFavorite,
   isEditing,
   onDeletePress,
+  onIncrement,
+  onDecrement,
 }: TaskItemProps) => {
-  const { updateTask } = useGameContext();
-
-  const handleIncrement = () => {
-    updateTask(task.id, { number: task.number + 1 });
-  };
-
-  const handleDecrement = () => {
-    if (task.number > 0) {
-      updateTask(task.id, { number: task.number - 1 });
-    }
-  };
-
   return (
     <View style={styles.swipeWrapper}>
       <View style={[styles.container, isEditing && styles.editingContainer]}>
@@ -52,14 +43,14 @@ const TaskItem = ({
           </View>
           <CustomButton
             variant="green"
-            onPress={handleIncrement}
+            onPress={() => onIncrement(task.id, task.number)}
             extraStyle={styles.taskStatusBtn}
           >
             <CustomText extraStyle={styles.taskStatusBtnText}>+</CustomText>
           </CustomButton>
           <CustomButton
             variant="grey"
-            onPress={handleDecrement}
+            onPress={() => onDecrement(task.id, task.number)}
             extraStyle={styles.taskStatusBtn}
           >
             <CustomText extraStyle={styles.taskStatusBtnText}>-</CustomText>

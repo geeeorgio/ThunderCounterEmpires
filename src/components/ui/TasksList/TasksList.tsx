@@ -11,6 +11,8 @@ interface TasksListProps {
   onToggleFavorite: (taskId: string) => void;
   isEditing?: boolean;
   onDeletePress: (taskId: string) => void;
+  onIncrement: (taskId: string, currentNumber: number) => void;
+  onDecrement: (taskId: string, currentNumber: number) => void;
 }
 
 const TasksList = ({
@@ -18,6 +20,8 @@ const TasksList = ({
   onToggleFavorite,
   isEditing,
   onDeletePress,
+  onIncrement,
+  onDecrement,
 }: TasksListProps) => {
   return (
     <FlatList
@@ -28,6 +32,8 @@ const TasksList = ({
           onToggleFavorite={onToggleFavorite}
           isEditing={isEditing}
           onDeletePress={() => onDeletePress(item.id)}
+          onIncrement={onIncrement}
+          onDecrement={onDecrement}
         />
       )}
       keyExtractor={(item) => item.id}

@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
   },
   footerButtons: {
     position: 'absolute',
-    bottom: hp(60),
+    bottom: hp(44),
     left: wp(20),
     right: wp(20),
     alignSelf: 'center',
@@ -42,11 +42,11 @@ export const styles = StyleSheet.create({
   },
   purpleBtn: {
     flex: 0.8,
-    paddingVertical: hp(12),
+    paddingVertical: hp(10),
   },
   greenBtn: {
     flex: 0.2,
-    paddingVertical: hp(12),
+    paddingVertical: hp(10),
   },
   footerButtonText: {
     fontSize: sp(18),
