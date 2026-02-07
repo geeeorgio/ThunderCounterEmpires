@@ -1,10 +1,9 @@
-import { createContext, useContext } from 'react';
+import { useContext } from 'react';
 
+import { GameContext } from 'src/context/GameContextProvider';
 import type { GameContextType } from 'src/types';
 
-export const GameContext = createContext<GameContextType | null>(null);
-
-export const useGameContext = () => {
+export const useGameContext = (): GameContextType => {
   const context = useContext(GameContext);
   if (!context) {
     throw new Error('useGameContext must be used within a GameContextProvider');

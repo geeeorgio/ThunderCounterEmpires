@@ -1,12 +1,13 @@
 import type { ReactNode } from 'react';
-import { useEffect, useMemo, useState } from 'react';
+import { createContext, useEffect, useMemo, useState } from 'react';
 import type { ImageSourcePropType } from 'react-native';
 
 import { MAIN_BG_IMAGE } from 'src/constants';
 import { STORIES } from 'src/constants/stories';
-import { GameContext } from 'src/hooks/useGameContext';
-import type { Story, TaskType } from 'src/types';
+import type { GameContextType, Story, TaskType } from 'src/types';
 import { getItemFromStorage, setItemInStorage } from 'src/utils';
+
+export const GameContext = createContext<GameContextType | null>(null);
 
 const GameContextProvider = ({ children }: { children: ReactNode }) => {
   const [gameBackground, _] = useState<ImageSourcePropType>(MAIN_BG_IMAGE);
@@ -27,10 +28,10 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
           setOnboardingDone(isOnboardingCompleted);
         }
 
-        if (savedTasks !== null) {
+        if (savedTasks !== null && Array.isArray(savedTasks)) {
           const parsedTasks = savedTasks.map((task) => ({
             ...task,
-            createdAt: new Date(task.createdAt),
+            createdAt: task.createdAt ? new Date(task.createdAt) : new Date(),
           }));
           setContextTasks(parsedTasks);
         }
@@ -56,7 +57,7 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
   }, [contextTasks, isLoading]);
 
   const addContextTask = (task: TaskType) => {
-    setContextTasks((prev) => [...prev, task]);
+    setContextTasks((prev) => [task, ...prev]);
   };
 
   const deleteContextTask = (taskId: string) => {
