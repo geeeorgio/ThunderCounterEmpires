@@ -8,13 +8,28 @@ import type { TaskType } from 'src/types';
 
 interface TasksListProps {
   tasks: TaskType[];
+  onToggleFavorite: (taskId: string) => void;
+  isEditing?: boolean;
+  onDeletePress: (taskId: string) => void;
 }
 
-const TasksList = ({ tasks }: TasksListProps) => {
+const TasksList = ({
+  tasks,
+  onToggleFavorite,
+  isEditing,
+  onDeletePress,
+}: TasksListProps) => {
   return (
     <FlatList
       data={tasks}
-      renderItem={({ item }) => <TaskItem task={item} />}
+      renderItem={({ item }) => (
+        <TaskItem
+          task={item}
+          onToggleFavorite={onToggleFavorite}
+          isEditing={isEditing}
+          onDeletePress={() => onDeletePress(item.id)}
+        />
+      )}
       keyExtractor={(item) => item.id}
       showsVerticalScrollIndicator={false}
       style={styles.flatList}

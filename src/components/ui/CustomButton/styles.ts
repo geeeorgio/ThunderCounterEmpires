@@ -10,9 +10,6 @@ export const styles = StyleSheet.create({
   },
   red: {
     backgroundColor: COLORS.red_1,
-    borderWidth: wp(5),
-    borderColor: COLORS.grey_border,
-    borderRadius: wp(10),
   },
   purple_main: {
     backgroundColor: COLORS.purple_btn,

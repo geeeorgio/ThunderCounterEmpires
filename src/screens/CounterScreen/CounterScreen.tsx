@@ -14,6 +14,7 @@ import {
   CustomScreenWrapper,
   CustomText,
   TaskInput,
+  TaskModal,
   TasksList,
 } from 'src/components';
 import { useGameContext } from 'src/hooks/useGameContext';
@@ -21,7 +22,12 @@ import type { MainStackNavigationProp, TaskType } from 'src/types';
 
 const CounterScreen = () => {
   const navigation = useNavigation<MainStackNavigationProp>();
-  const { contextTasks, addContextTask } = useGameContext();
+  const {
+    contextTasks,
+    addContextTask,
+    toggleFavoriteTask,
+    deleteContextTask,
+  } = useGameContext();
 
   const [isFormVisible, setIsFormVisible] = useState(false);
 
@@ -30,6 +36,10 @@ const CounterScreen = () => {
 
   const [showPicker, setShowPicker] = useState(false);
   const [pickerMode, setPickerMode] = useState<'date' | 'time'>('date');
+  const [isSavedTasksVisible, setIsSavedTasksVisible] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [taskToDelete, setTaskToDelete] = useState<string | null>(null);
 
   const handleOpenForm = () => {
     setNewTitle('');
@@ -77,6 +87,7 @@ const CounterScreen = () => {
       isSkipped: false,
       isFailed: false,
       isInProgress: false,
+      isFavorite: false,
     };
 
     addContextTask(newTask);
@@ -84,6 +95,37 @@ const CounterScreen = () => {
     setShowPicker(false);
     setNewTitle('');
     setNewDate(new Date());
+  };
+
+  const handleToggleFavorite = (taskId: string) => {
+    toggleFavoriteTask(taskId);
+  };
+
+  const handleOnSavedPress = () => {
+    isSavedTasksVisible
+      ? setIsSavedTasksVisible(false)
+      : setIsSavedTasksVisible(true);
+  };
+
+  const handleOnEditPress = () => {
+    setIsEditing(!isEditing);
+  };
+
+  const handleDeletePress = (taskId: string) => {
+    setTaskToDelete(taskId);
+    setShowDeleteModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowDeleteModal(false);
+    setTaskToDelete(null);
+  };
+
+  const handleConfirmDelete = () => {
+    if (taskToDelete) {
+      deleteContextTask(taskToDelete);
+      handleCloseModal();
+    }
   };
 
   return (
@@ -96,12 +138,32 @@ const CounterScreen = () => {
         >
           <ActionButtons
             onSortPress={() => {}}
-            onEditPress={() => {}}
-            onSavedPress={() => {}}
+            onEditPress={handleOnEditPress}
+            isEditing={isEditing}
+            onSavedPress={handleOnSavedPress}
+            isSavedActive={isSavedTasksVisible}
           />
 
+          {isSavedTasksVisible &&
+            contextTasks.filter((task) => task.isFavorite).length === 0 && (
+              <View style={styles.noSavedTasksContainer}>
+                <CustomText extraStyle={styles.noSavedTasksText}>
+                  No saved tasks yet. {'\n'} Add some to your favorites.
+                </CustomText>
+              </View>
+            )}
+
           {contextTasks.length > 0 && !isFormVisible && (
-            <TasksList tasks={contextTasks} />
+            <TasksList
+              tasks={
+                isSavedTasksVisible
+                  ? contextTasks.filter((task) => task.isFavorite)
+                  : contextTasks
+              }
+              onToggleFavorite={handleToggleFavorite}
+              isEditing={isEditing}
+              onDeletePress={handleDeletePress}
+            />
           )}
 
           {contextTasks.length === 0 && !isFormVisible && (
@@ -157,6 +219,12 @@ const CounterScreen = () => {
           </View>
         </CustomContainer>
       </CustomScreenWrapper>
+
+      <TaskModal
+        visible={showDeleteModal}
+        onCloseModal={handleCloseModal}
+        onDeleteTask={handleConfirmDelete}
+      />
     </Pressable>
   );
 };

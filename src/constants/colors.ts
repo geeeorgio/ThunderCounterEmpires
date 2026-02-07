@@ -22,4 +22,6 @@ export const COLORS = {
   grey_border: '#f3ece8',
 
   red_1: '#FF3A2E',
+
+  modal_overlay: 'rgba(200, 200, 200, 0.5)',
 };

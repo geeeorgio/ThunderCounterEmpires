@@ -63,6 +63,20 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
     setContextTasks((prev) => prev.filter((task) => task.id !== taskId));
   };
 
+  const updateTask = (taskId: string, updates: Partial<TaskType>) => {
+    setContextTasks((prev) =>
+      prev.map((task) => (task.id === taskId ? { ...task, ...updates } : task)),
+    );
+  };
+
+  const toggleFavoriteTask = (taskId: string) => {
+    setContextTasks((prev) =>
+      prev.map((task) =>
+        task.id === taskId ? { ...task, isFavorite: !task.isFavorite } : task,
+      ),
+    );
+  };
+
   const contextValue = useMemo(
     () => ({
       contextBackground: gameBackground,
@@ -72,6 +86,8 @@ const GameContextProvider = ({ children }: { children: ReactNode }) => {
       contextTasks,
       addContextTask,
       deleteContextTask,
+      updateTask,
+      toggleFavoriteTask,
       isLoading,
     }),
     [gameBackground, onboardingDone, contextStories, contextTasks, isLoading],

@@ -4,6 +4,11 @@ import { COLORS, FONTS } from 'src/constants';
 import { hp, sp, wp } from 'src/utils';
 
 export const styles = StyleSheet.create({
+  swipeWrapper: {
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
   container: {
     width: '100%',
     padding: wp(8),
@@ -11,6 +16,9 @@ export const styles = StyleSheet.create({
     borderWidth: wp(2),
     borderColor: COLORS.white,
     gap: hp(12),
+  },
+  editingContainer: {
+    transform: [{ translateX: wp(-90) }],
   },
   taskInfoContainer: {
     backgroundColor: COLORS.input_color,
@@ -82,5 +90,23 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: wp(10),
+  },
+  favoriteBtn: {
+    backgroundColor: COLORS.purple_light,
+  },
+  deleteBtn: {
+    position: 'absolute',
+    right: wp(-85),
+    width: wp(80),
+    height: '40%',
+    backgroundColor: COLORS.red_1,
+    borderRadius: wp(15),
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: wp(10),
+  },
+  editingDeleteBtn: {
+    right: 0,
+    zIndex: 100,
   },
 });

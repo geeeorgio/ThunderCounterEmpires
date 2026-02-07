@@ -16,6 +16,7 @@ export type TaskType = {
   isFailed: boolean;
   isInProgress: boolean;
   createdAt: Date;
+  isFavorite: boolean;
 };
 
 export type GameContextType = {
@@ -29,6 +30,9 @@ export type GameContextType = {
   contextTasks: TaskType[];
   addContextTask: (task: TaskType) => void;
   deleteContextTask: (taskId: string) => void;
+  updateTask: (taskId: string, updates: Partial<TaskType>) => void;
+  //
+  toggleFavoriteTask: (taskId: string) => void;
   //
   isLoading: boolean;
 };

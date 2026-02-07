@@ -13,6 +13,7 @@ import CustomText from './ui/CustomText/CustomText';
 import StoriesList from './ui/StoriesList/StoriesList';
 import StoryDetails from './ui/StoryDetails/StoryDetails';
 import TaskInput from './ui/TaskInput/TaskInput';
+import TaskModal from './ui/TaskModal/TaskModal';
 import TasksList from './ui/TasksList/TasksList';
 
 export {
@@ -32,4 +33,5 @@ export {
   ActionButtons,
   TasksList,
   TaskInput,
+  TaskModal,
 };

@@ -2,61 +2,101 @@ import React from 'react';
 import { View } from 'react-native';
 
 import CustomButton from '../CustomButton/CustomButton';
+import BinIcon from '../CustomIcons/BinIcon';
 import SaveIcon from '../CustomIcons/SaveIcon';
 import CustomText from '../CustomText/CustomText';
 
 import { styles } from './styles';
 
+import { COLORS } from 'src/constants';
+import { useGameContext } from 'src/hooks/useGameContext';
 import type { TaskType } from 'src/types';
 import { formatDateForTask, formatTimeForTask, hp, wp } from 'src/utils';
 
 interface TaskItemProps {
   task: TaskType;
+  onToggleFavorite: (taskId: string) => void;
+  isEditing?: boolean;
+  onDeletePress: (taskId: string) => void;
 }
 
-const TaskItem = ({ task }: TaskItemProps) => {
+const TaskItem = ({
+  task,
+  onToggleFavorite,
+  isEditing,
+  onDeletePress,
+}: TaskItemProps) => {
+  const { updateTask } = useGameContext();
+
+  const handleIncrement = () => {
+    updateTask(task.id, { number: task.number + 1 });
+  };
+
+  const handleDecrement = () => {
+    if (task.number > 0) {
+      updateTask(task.id, { number: task.number - 1 });
+    }
+  };
+
   return (
-    <View style={styles.container}>
-      <View style={styles.taskInfoContainer}>
-        <CustomText extraStyle={styles.taskTitle}>{task.title}</CustomText>
-      </View>
-      <View style={styles.taskStatusContainer}>
-        <View style={styles.taskNumber}>
-          <CustomText extraStyle={styles.taskNumberText}>
-            {task.number}
-          </CustomText>
+    <View style={styles.swipeWrapper}>
+      <View style={[styles.container, isEditing && styles.editingContainer]}>
+        <View style={styles.taskInfoContainer}>
+          <CustomText extraStyle={styles.taskTitle}>{task.title}</CustomText>
         </View>
-        <CustomButton
-          variant="green"
-          onPress={() => {}}
-          extraStyle={styles.taskStatusBtn}
-        >
-          <CustomText extraStyle={styles.taskStatusBtnText}>+</CustomText>
-        </CustomButton>
-        <CustomButton
-          variant="grey"
-          onPress={() => {}}
-          extraStyle={styles.taskStatusBtn}
-        >
-          <CustomText extraStyle={styles.taskStatusBtnText}>-</CustomText>
-        </CustomButton>
+        <View style={styles.taskStatusContainer}>
+          <View style={styles.taskNumber}>
+            <CustomText extraStyle={styles.taskNumberText}>
+              {task.number}
+            </CustomText>
+          </View>
+          <CustomButton
+            variant="green"
+            onPress={handleIncrement}
+            extraStyle={styles.taskStatusBtn}
+          >
+            <CustomText extraStyle={styles.taskStatusBtnText}>+</CustomText>
+          </CustomButton>
+          <CustomButton
+            variant="grey"
+            onPress={handleDecrement}
+            extraStyle={styles.taskStatusBtn}
+          >
+            <CustomText extraStyle={styles.taskStatusBtnText}>-</CustomText>
+          </CustomButton>
+        </View>
+
+        <View style={styles.taskFooter}>
+          <View style={styles.taskDate}>
+            <CustomText extraStyle={styles.taskText}>
+              {formatDateForTask(task.createdAt)}
+            </CustomText>
+          </View>
+          <View style={styles.taskTime}>
+            <CustomText extraStyle={styles.taskText}>
+              {formatTimeForTask(task.createdAt)}
+            </CustomText>
+          </View>
+          <CustomButton
+            onPress={() => onToggleFavorite(task.id)}
+            extraStyle={[styles.saveBtn, task.isFavorite && styles.favoriteBtn]}
+          >
+            <SaveIcon
+              width={wp(18)}
+              height={hp(18)}
+              color={task.isFavorite ? COLORS.purple_main : COLORS.white}
+            />
+          </CustomButton>
+        </View>
       </View>
 
-      <View style={styles.taskFooter}>
-        <View style={styles.taskDate}>
-          <CustomText extraStyle={styles.taskText}>
-            {formatDateForTask(task.createdAt)}
-          </CustomText>
-        </View>
-        <View style={styles.taskTime}>
-          <CustomText extraStyle={styles.taskText}>
-            {formatTimeForTask(task.createdAt)}
-          </CustomText>
-        </View>
-        <CustomButton onPress={() => {}} extraStyle={styles.saveBtn}>
-          <SaveIcon width={wp(18)} height={hp(18)} />
-        </CustomButton>
-      </View>
+      <CustomButton
+        variant="red"
+        onPress={() => onDeletePress(task.id)}
+        extraStyle={[styles.deleteBtn, isEditing && styles.editingDeleteBtn]}
+      >
+        <BinIcon width={wp(28)} height={hp(28)} color={COLORS.white} />
+      </CustomButton>
     </View>
   );
 };

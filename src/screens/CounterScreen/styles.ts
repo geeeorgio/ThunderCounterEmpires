@@ -52,4 +52,19 @@ export const styles = StyleSheet.create({
     fontSize: sp(18),
     fontFamily: FONTS.IntBlack,
   },
+  noSavedTasksContainer: {
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: wp(2),
+    borderColor: COLORS.grey_border_55,
+    paddingVertical: hp(12),
+    borderRadius: wp(15),
+  },
+  noSavedTasksText: {
+    fontSize: sp(15),
+    lineHeight: hp(20),
+    fontFamily: FONTS.MontRegular,
+    textAlign: 'center',
+  },
 });
