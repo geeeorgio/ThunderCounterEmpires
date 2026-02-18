@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
     borderRadius: wp(10),
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: COLORS.pearl_bg,
+    backgroundColor: COLORS.days_bg,
   },
   inputTitle: {
     width: '100%',
@@ -36,7 +36,7 @@ export const styles = StyleSheet.create({
   },
   dateInputContainer: {
     flex: 0.44,
-    backgroundColor: COLORS.pearl_bg,
+    backgroundColor: COLORS.days_bg,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: wp(10),
@@ -44,7 +44,7 @@ export const styles = StyleSheet.create({
   },
   timeInputContainer: {
     flex: 0.26,
-    backgroundColor: COLORS.pearl_bg,
+    backgroundColor: COLORS.days_bg,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: wp(10),
@@ -52,16 +52,19 @@ export const styles = StyleSheet.create({
   },
   inputDetailsBtn: {
     flex: 0.15,
-    paddingVertical: hp(10),
+    paddingVertical: hp(9),
+    borderColor: COLORS.days_light,
+    borderWidth: wp(1),
+    borderRadius: wp(10),
   },
   inputDetailsBtnText: {
     fontSize: sp(10),
     fontFamily: FONTS.IntMedium,
   },
   saveText: {
-    color: COLORS.green_1,
+    color: COLORS.days_text,
   },
   cancelText: {
-    color: COLORS.red_1,
+    color: COLORS.days_accent,
   },
 });

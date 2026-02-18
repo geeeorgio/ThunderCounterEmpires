@@ -35,7 +35,7 @@ const OnbdScreen_1 = () => {
       >
         <View style={styles.textContainer}>
           <CustomText extraStyle={styles.contentTitle}>
-            Welcome to Pearl Path Counter
+            Welcome to the Thread of Days
           </CustomText>
           <CustomText extraStyle={styles.contentDescription}>
             Count anything, step by step. Every tap moves you forward and builds

@@ -32,4 +32,13 @@ export const COLORS = {
   pearl_accent: '#81D4FA',
   pearl_opacity_10: 'rgba(224, 231, 255, 0.1)',
   pearl_opacity_50: 'rgba(192, 219, 230, 0.5)',
+
+  days_main: '#8C7851',
+  days_light: '#AD9D82',
+  days_accent: '#FFC300',
+  days_btn: '#7A4C15',
+  days_bg: '#382F2D',
+  days_text: '#F9F4EF',
+  days_opacity_10: 'rgba(192, 86, 33, 0.1)',
+  days_red: '#BF2D24',
 };

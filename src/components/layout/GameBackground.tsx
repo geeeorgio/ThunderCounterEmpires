@@ -29,5 +29,6 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
+    backgroundColor: 'rgba(20, 20, 20, 0.3)',
   },
 });

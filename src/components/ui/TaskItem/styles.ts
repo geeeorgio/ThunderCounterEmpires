@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     transform: [{ translateX: wp(-90) }],
   },
   taskInfoContainer: {
-    backgroundColor: COLORS.pearl_bg,
+    backgroundColor: COLORS.days_bg,
     width: '100%',
     padding: wp(10),
     borderRadius: wp(10),
@@ -38,7 +38,7 @@ export const styles = StyleSheet.create({
   },
   taskNumber: {
     flex: 0.6,
-    backgroundColor: COLORS.pearl_bg,
+    backgroundColor: COLORS.days_bg,
     justifyContent: 'center',
     alignItems: 'center',
     paddingVertical: hp(16),
@@ -67,7 +67,7 @@ export const styles = StyleSheet.create({
   taskDate: {
     flex: 0.5,
     paddingVertical: wp(12),
-    backgroundColor: COLORS.pearl_bg,
+    backgroundColor: COLORS.days_bg,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: wp(10),
@@ -78,7 +78,7 @@ export const styles = StyleSheet.create({
   taskTime: {
     flex: 0.35,
     paddingVertical: wp(12),
-    backgroundColor: COLORS.pearl_bg,
+    backgroundColor: COLORS.days_bg,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: wp(10),
@@ -86,21 +86,21 @@ export const styles = StyleSheet.create({
   saveBtn: {
     flex: 0.15,
     borderWidth: wp(1),
-    borderColor: COLORS.pearl_opacity_50,
+    borderColor: COLORS.days_light,
     padding: wp(11),
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: wp(10),
   },
   favoriteBtn: {
-    backgroundColor: COLORS.pearl_accent,
+    backgroundColor: COLORS.days_light,
   },
   deleteBtn: {
     position: 'absolute',
     right: wp(-85),
     width: wp(80),
     height: '40%',
-    backgroundColor: COLORS.red_1,
+    backgroundColor: COLORS.days_red,
     borderRadius: wp(15),
     justifyContent: 'center',
     alignItems: 'center',
