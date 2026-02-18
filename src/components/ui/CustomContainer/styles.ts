@@ -8,16 +8,16 @@ export const styles = StyleSheet.create({
     width: '100%',
   },
   purple_main: {
-    backgroundColor: COLORS.purple_main,
+    backgroundColor: COLORS.pearl_main,
     borderTopLeftRadius: wp(50),
     borderTopRightRadius: wp(50),
   },
   lightPurple: {
-    backgroundColor: COLORS.purple_light,
+    backgroundColor: COLORS.pearl_light,
     borderRadius: wp(10),
   },
   dark: {
-    backgroundColor: COLORS.input_color,
+    backgroundColor: COLORS.pearl_bg,
     borderWidth: wp(0),
     borderRadius: wp(10),
   },

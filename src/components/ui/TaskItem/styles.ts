@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     transform: [{ translateX: wp(-90) }],
   },
   taskInfoContainer: {
-    backgroundColor: COLORS.input_color,
+    backgroundColor: COLORS.pearl_bg,
     width: '100%',
     padding: wp(10),
     borderRadius: wp(10),
@@ -38,7 +38,7 @@ export const styles = StyleSheet.create({
   },
   taskNumber: {
     flex: 0.6,
-    backgroundColor: COLORS.input_color,
+    backgroundColor: COLORS.pearl_bg,
     justifyContent: 'center',
     alignItems: 'center',
     paddingVertical: hp(16),
@@ -67,7 +67,7 @@ export const styles = StyleSheet.create({
   taskDate: {
     flex: 0.5,
     paddingVertical: wp(12),
-    backgroundColor: COLORS.input_color,
+    backgroundColor: COLORS.pearl_bg,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: wp(10),
@@ -78,7 +78,7 @@ export const styles = StyleSheet.create({
   taskTime: {
     flex: 0.35,
     paddingVertical: wp(12),
-    backgroundColor: COLORS.input_color,
+    backgroundColor: COLORS.pearl_bg,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: wp(10),
@@ -86,14 +86,14 @@ export const styles = StyleSheet.create({
   saveBtn: {
     flex: 0.15,
     borderWidth: wp(1),
-    borderColor: COLORS.purple_light,
+    borderColor: COLORS.pearl_opacity_50,
     padding: wp(11),
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: wp(10),
   },
   favoriteBtn: {
-    backgroundColor: COLORS.purple_light,
+    backgroundColor: COLORS.pearl_accent,
   },
   deleteBtn: {
     position: 'absolute',

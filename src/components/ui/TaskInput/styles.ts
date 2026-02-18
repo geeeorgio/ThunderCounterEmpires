@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
     borderRadius: wp(10),
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: COLORS.input_color,
+    backgroundColor: COLORS.pearl_bg,
   },
   inputTitle: {
     width: '100%',
@@ -36,7 +36,7 @@ export const styles = StyleSheet.create({
   },
   dateInputContainer: {
     flex: 0.44,
-    backgroundColor: COLORS.input_color,
+    backgroundColor: COLORS.pearl_bg,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: wp(10),
@@ -44,7 +44,7 @@ export const styles = StyleSheet.create({
   },
   timeInputContainer: {
     flex: 0.26,
-    backgroundColor: COLORS.input_color,
+    backgroundColor: COLORS.pearl_bg,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: wp(10),

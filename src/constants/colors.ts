@@ -24,4 +24,12 @@ export const COLORS = {
   red_1: '#FF3A2E',
 
   modal_overlay: 'rgba(200, 200, 200, 0.5)',
+
+  pearl_main: '#145566',
+  pearl_light: '#71B280',
+  pearl_btn: '#003344',
+  pearl_bg: '#0D252D',
+  pearl_accent: '#81D4FA',
+  pearl_opacity_10: 'rgba(224, 231, 255, 0.1)',
+  pearl_opacity_50: 'rgba(192, 219, 230, 0.5)',
 };

@@ -45,12 +45,12 @@ const ActionButtons = ({
           <SortIcon
             width={wp(16)}
             height={hp(16)}
-            color={isSorting ? COLORS.purple_main : COLORS.white}
+            color={isSorting ? COLORS.pearl_accent : COLORS.white}
           />
           <CustomText
             extraStyle={[
               styles.counterHeaderButtonText,
-              isSorting && { color: COLORS.purple_main },
+              isSorting && { color: COLORS.pearl_accent },
             ]}
           >
             Sort by
@@ -64,12 +64,12 @@ const ActionButtons = ({
           <PenIcon
             width={wp(16)}
             height={hp(16)}
-            color={isEditing ? COLORS.purple_main : COLORS.white}
+            color={isEditing ? COLORS.pearl_accent : COLORS.white}
           />
           <CustomText
             extraStyle={[
               styles.counterHeaderButtonText,
-              isEditing && { color: COLORS.purple_main },
+              isEditing && { color: COLORS.pearl_accent },
             ]}
           >
             Edit
@@ -83,12 +83,12 @@ const ActionButtons = ({
           <SaveIcon
             width={wp(12)}
             height={hp(16)}
-            color={isSavedActive ? COLORS.purple_main : COLORS.white}
+            color={isSavedActive ? COLORS.pearl_accent : COLORS.white}
           />
           <CustomText
             extraStyle={[
               styles.counterHeaderButtonText,
-              isSavedActive && { color: COLORS.purple_main },
+              isSavedActive && { color: COLORS.pearl_accent },
             ]}
           >
             Saved

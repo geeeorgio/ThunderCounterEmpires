@@ -79,7 +79,7 @@ android {
 
     namespace "com.thundercounterempires"
     defaultConfig {
-        applicationId "com.thundercounterempires"
+        applicationId "com.pearlpathcounter"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

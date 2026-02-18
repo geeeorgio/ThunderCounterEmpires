@@ -35,7 +35,7 @@ const OnbdScreen_1 = () => {
       >
         <View style={styles.textContainer}>
           <CustomText extraStyle={styles.contentTitle}>
-            Welcome to Thunder Counter Empires
+            Welcome to Pearl Path Counter
           </CustomText>
           <CustomText extraStyle={styles.contentDescription}>
             Count anything, step by step. Every tap moves you forward and builds

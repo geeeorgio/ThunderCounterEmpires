@@ -34,7 +34,7 @@ const OnbdScreen_4 = () => {
       >
         <View style={styles.textContainer}>
           <CustomText extraStyle={styles.contentTitle}>
-            Build Your {'\n'} Empire
+            Build Your {'\n'} Path
           </CustomText>
           <CustomText extraStyle={styles.contentDescription}>
             Save important counters, adjust settings, and grow your progress one

@@ -12,18 +12,18 @@ export const styles = StyleSheet.create({
     backgroundColor: COLORS.red_1,
   },
   purple_main: {
-    backgroundColor: COLORS.purple_btn,
+    backgroundColor: COLORS.pearl_btn,
     borderWidth: wp(5),
     borderColor: COLORS.grey_border,
     borderRadius: wp(20),
   },
   purple_light: {
-    backgroundColor: COLORS.purple_light,
+    backgroundColor: COLORS.pearl_btn,
     borderWidth: wp(0),
     borderRadius: wp(10),
   },
   green: {
-    backgroundColor: COLORS.green_1,
+    backgroundColor: COLORS.pearl_light,
     borderWidth: wp(5),
     borderColor: COLORS.grey_border,
     borderRadius: wp(20),
@@ -35,7 +35,7 @@ export const styles = StyleSheet.create({
     borderRadius: wp(20),
   },
   dark: {
-    backgroundColor: COLORS.input_color,
+    backgroundColor: COLORS.pearl_bg,
     borderWidth: wp(0),
     borderRadius: wp(10),
   },

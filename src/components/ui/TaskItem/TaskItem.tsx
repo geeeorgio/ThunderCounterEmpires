@@ -75,7 +75,7 @@ const TaskItem = ({
             <SaveIcon
               width={wp(18)}
               height={hp(18)}
-              color={task.isFavorite ? COLORS.purple_main : COLORS.white}
+              color={task.isFavorite ? COLORS.pearl_main : COLORS.white}
             />
           </CustomButton>
         </View>
